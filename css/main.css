@@ -1315,7 +1315,9 @@ header .logo a {
 	background: #111111;
 	opacity: .85;
 }
-
+.my-name-header {
+	font-size: 24pt !important;
+}
 .intro-content {
 	display: table-cell;
 	vertical-align: middle;
@@ -2595,5 +2597,6 @@ footer .copyright span:last-child::after {
 #go-top a:hover {
 	background: #000000;
 }
+
 
 /*# sourceMappingURL=main.css.map */
