@@ -79,6 +79,7 @@ body {
 
 .no-bullets {
     list-style-type: none;
+	text-align: left;
 }
 
 /**
