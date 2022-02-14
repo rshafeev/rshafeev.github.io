@@ -18,7 +18,7 @@
     	$("#loader").fadeOut("slow", function(){
 
         // will fade out the whole DIV that covers the website.
-        $("#preloader").delay(300).fadeOut("slow");
+        $("#preloader").delay(1).fadeOut("slow");
 
       });       
 
@@ -122,7 +122,7 @@
 
       type:'inline',
       fixedContentPos: false,
-      removalDelay: 300,
+      removalDelay: 30,
       showCloseBtn: false,
       mainClass: 'mfp-fade'
 
