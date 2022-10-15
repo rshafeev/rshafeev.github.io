@@ -110,7 +110,7 @@
 
     <ul class="intro-social">
                 <p>
-                    <strong>Age 32</strong>
+                    <strong id="my_age_value">Age 32</strong>
                 </p>
         <li><a href="https://github.com/rshafeev"><i class="fa fa-github"></i></a></li>
     </ul> <!-- /intro-social -->
@@ -247,7 +247,7 @@
         <div class="col-twelve resume-header">
 
             <h2>Work Experience</h2>
-            <p>Full: 9 years 3 months </p>
+            <p id="full_experience">Full: 9 years 3 months </p>
         </div>
 
         <div class="col-twelve">
@@ -319,8 +319,8 @@
 
                     <div class="timeline-header">
                         <h3>Solution Architect</h3>
-                        <p>February 2021 - February 2022 <br/>
-                            (1 year 1 month)
+                        <p>Match 2021 - February 2022 <br/>
+                            (1 year)
                         </p>
                     </div>
 
@@ -500,8 +500,8 @@
 
                     <div class="timeline-header">
                         <h3>Product Lead</h3>
-                        <p>February 2017 - March 2018<br/>
-                            (1 year)</p>
+                        <p>December 2016 - February 2018<br/>
+                            (1 year 3 months)</p>
                     </div>
 
                     <div class="timeline-content">
@@ -552,8 +552,8 @@
 
                     <div class="timeline-header">
                         <h3>Backend Developer</h3>
-                        <p>July 2015 - February 2017<br/>
-                            (1 year 8 months)</p>
+                        <p>July 2015 - November 2016<br/>
+                            (1 year 5 months)</p>
                     </div>
 
                     <div class="timeline-content">
@@ -1116,6 +1116,39 @@
 <script>
      (function() { var v = document.getElementsByClassName("youtube-player"); for (var n = 0; n < v.length; n++) { v[n].onclick = function () { var iframe = document.createElement("iframe"); iframe.setAttribute("src", "//www.youtube.com/embed/" + this.dataset.id + "?autoplay=1&autohide=2&border=0&wmode=opaque&enablejsapi=1&rel="+ this.dataset.related +"&controls="+this.dataset.control+"&showinfo=" + this.dataset.info); iframe.setAttribute("frameborder", "0"); iframe.setAttribute("id", "youtube-iframe"); iframe.setAttribute("style", "width: 100%; height: 100%; position: absolute; top: 0; left: 0;"); if (this.dataset.fullscreen == 1){ iframe.setAttribute("allowfullscreen", ""); } while (this.firstChild) { this.removeChild(this.firstChild); } this.appendChild(iframe); }; } })();
 
+function monthDiff(d1, d2) {
+    var months;
+    months = (d2.getFullYear() - d1.getFullYear()) * 12;
+    months -= d1.getMonth();
+    months += d2.getMonth();
+    return months <= 0 ? 0 : months + 1;
+}
+
+      var age = (new Date().getFullYear()) - 1990;
+      var my_age_value_s = 'Age ' + age;
+
+      var exp_hamburg = 5;
+      var exp_khpi = 1*12+10;
+      var exp_starline_dev = 1*12+5;
+      var exp_starline_lead = 1*12+3;
+      var exp_arrival_lead = 1*12+5;
+      var exp_ringcentral_lead = 1*12 + 6;
+      var exp_ringcentral_arch = 1*12;
+      var exp_mts_arch = monthDiff(new Date(2022, 5, 5), new Date());
+      var full_experience = (exp_hamburg+exp_khpi+exp_starline_dev+exp_starline_lead+exp_arrival_lead+exp_ringcentral_lead+exp_ringcentral_arch+exp_mts_arch);
+      var full_experience_y = Math.floor(full_experience / 12);
+      var full_experience_m = full_experience - full_experience_y*12;
+      var full_experience_s = 'Full: ' + full_experience_y + ' years ';
+      if (full_experience_m == 1) {
+        full_experience_s += full_experience_m + ' month';
+      }
+      else if (full_experience_m > 1) {
+        full_experience_s += full_experience_m + ' months';
+      }
+
+
+     document.getElementById("my_age_value").innerHTML = my_age_value_s;
+     document.getElementById("full_experience").innerHTML = full_experience_s;
 
 </script>
 
